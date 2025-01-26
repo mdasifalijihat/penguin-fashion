@@ -18,18 +18,51 @@
     </style>
   </head>
   <body class="font-roboto">
-    <header class="bg-[#FFFBF0] pl-4 ">
+    <header class="bg-[#FFFBF0] pl-4">
       <nav class="md:flex justify-between items-center container mx-auto py-14">
         <div>
-            <img class="w-[290px] h-[40px]" src="images/icons/logo.png" alt="">
+          <img
+            class="w-[290px] h-[40px]"
+            src="images/icons/logo.png"
+            alt="Logo"
+          />
         </div>
-        <ul class="flex space-x-8 " >
-            <li><a href="">Home</a></li>
-            <li><a href="">Product</a></li>
-            <li><a href="">About us</a></li>
-            <li><a href=""> Contact us</a></li>
+        <!-- Hamburger icon for mobile -->
+        <div class="md:hidden flex items-center">
+          <button id="menu-toggle" class="text-gray-700">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Navigation Links -->
+        <ul id="menu" class="md:flex space-x-8 hidden">
+          <li><a href="">Home</a></li>
+          <li><a href="">Product</a></li>
+          <li><a href="">About us</a></li>
+          <li><a href="">Contact us</a></li>
         </ul>
       </nav>
+
+      <script>
+        // Toggle the menu visibility on mobile
+        document.getElementById("menu-toggle").addEventListener("click", () => {
+          const menu = document.getElementById("menu");
+          menu.classList.toggle("hidden");
+        });
+      </script>
+
       <!-- banner  -->
       <div class="md:flex md:items-center md:justify-around">
         <div>
@@ -296,7 +329,7 @@
 
       <!-- customer services  -->
       <section class="container mx-auto my-24">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-24 mx-auto ">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-24 mx-auto">
           <div class="grid grid-cols-1">
             <div class="flex items-center justify-center shadow-xl p-4">
               <img
